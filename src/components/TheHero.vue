@@ -41,7 +41,6 @@ export default {
   background-position: bottom;
   background-repeat: no-repeat;
   position: relative;
-  margin-bottom: $section-spacer;
 
   .overlay {
     position: absolute;
