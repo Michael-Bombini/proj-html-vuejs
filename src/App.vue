@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <TheHeader/>
+    <TheHero/>
 
   </div>
 </template>
 
 <script>
 import TheHeader from './components/TheHeader.vue';
+import TheHero from './components/TheHero.vue';
 
 export default {
   name: 'App',
   components: {
-    TheHeader
+    TheHeader,
+    TheHero
 }
 }
 </script>
