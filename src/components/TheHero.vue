@@ -11,6 +11,8 @@
           focus,taking advantage of the latest technologies to offer excellent
           services.
         </p>
+        <button class="mx-2 btn-main">Get in touch</button>
+        <button class="mx-2 btn-main outline">Read More</button>
       </div>
     </div>
   </section>
@@ -33,7 +35,7 @@ export default {
 @import "../assets/styles/general";
 
 .hero {
-  height: 80vh;
+  height: 90vh;
   background-image: url(../../public/images/hero-image.png);
   background-size: cover;
   background-position: bottom;
@@ -62,7 +64,7 @@ export default {
     h1 {
       font-size: 60px;
       font-weight: 900;
-      margin-bottom: 2rem;
+      margin-bottom: $medium-spacer;
     }
 
     p {
@@ -71,6 +73,7 @@ export default {
       margin: 0 auto;
       color: $edward;
       font-weight: 500;
+      margin-bottom: $medium-spacer;
     }
   }
 }
