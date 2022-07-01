@@ -5,7 +5,7 @@
 
     <div class="absolute">
       <div class="container text-center">
-        <h1 class="text-light">Lead ~ Customer</h1>
+        <h1 class="text-light">Lead ~ <strong>Customer</strong></h1>
         <p>
           Successful strategies require data analysis, creativity and customer
           focus,taking advantage of the latest technologies to offer excellent
@@ -75,6 +75,9 @@ export default {
       font-weight: 500;
       margin-bottom: $medium-spacer;
     }
+  }
+  strong {
+    background: rgba($blue-lagoon,0.3);
   }
 }
 </style>
