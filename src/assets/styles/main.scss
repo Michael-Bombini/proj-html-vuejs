@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap");
 @import "./variables";
 @import "./general";
 @import "~bootstrap/scss/bootstrap";
@@ -8,6 +8,7 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+/* BUTTON STYLES USED IN NAVBAR , HERO  */
 .btn-main {
   background-color: $blue-lagoon;
   color: $white;
@@ -21,4 +22,28 @@ body {
 .btn-main.outline {
   border: 2px solid $blue-lagoon;
   background-color: transparent;
+}
+
+/* CARD STYLES  */
+
+/* card used in FirstCardSection and BusinessArea */
+
+.card-section{
+  border-radius: 4px;
+  padding: 2.2rem 2.2rem 1.7rem;
+  height: 100%;
+  
+  i,h2,p { margin-bottom: $small-spacer;}
+  
+  i {
+    font-size: $text-big;
+  }
+
+  h2 {
+    font-size: $text-medium;
+  }
+  p {
+    font-size: $text-small;
+    max-width: 30ch;
+  }
 }
