@@ -1,7 +1,7 @@
 <template>
   <section class="hero">
     <div class="overlay"></div>
-      <TheNav :nav="navLink" />
+      <TheNav />
 
     <div class="absolute">
       <div class="container text-center">
@@ -41,6 +41,7 @@ export default {
   background-position: bottom;
   background-repeat: no-repeat;
   position: relative;
+  margin-bottom: $section-spacer;
 
   .overlay {
     position: absolute;
@@ -62,7 +63,7 @@ export default {
     padding-bottom: 150px;
 
     h1 {
-      font-size: 60px;
+      font-size: $text-title;
       font-weight: 900;
       margin-bottom: $medium-spacer;
     }
