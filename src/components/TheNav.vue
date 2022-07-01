@@ -5,21 +5,28 @@
         <img src="../../public/images/logo.svg" class="logo" alt="" />
       </div>
       <ul class="d-flex justify-content-between">
-        <li>a</li>
-        <li>a</li>
-        <li>a</li>
-        <li>a</li>
+        <li v-for="link in navLink" :key="link"><a href="#">{{link}}</a></li>
+    
       </ul>
     </div>
   </nav>
 </template>
 
 <script>
+import { state } from '../store';
+
 export default {
   name: "TheNav",
   data() {
     return {};
   },
+  
+  computed : {
+    navLink(){
+        return state.navLink;
+    }
+  }
+
 };
 </script>
 
@@ -28,9 +35,9 @@ export default {
 @import "../assets/styles/general";
 nav {
   z-index: 999;
-  color: red;
   position: relative;
-
+  
+  a{color: $white; text-transform: uppercase; padding: 0 0.8rem; font-weight: 600;}
 
   .logo {
     width: 128px;

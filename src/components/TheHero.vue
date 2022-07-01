@@ -1,9 +1,8 @@
 <template>
   <section class="hero">
     <div class="overlay"></div>
-    <template>
-        <TheNav :nav="nav-link"/>
-    </template>
+      <TheNav :nav="navLink" />
+
     <div class="absolute">
       <div class="container text-center">
         <h1 class="text-light">Lead ~ Customer</h1>
@@ -18,13 +17,14 @@
 </template>
 
 <script>
-import TheNav from './TheNav.vue';
+import TheNav from "./TheNav.vue";
 export default {
-    name: "TheHero",
-    data() {
-        return {};
-    },
-    components: { TheNav }
+  name: "TheHero",
+  data() {
+    return {
+    };
+  },
+  components: { TheNav },
 };
 </script>
 
@@ -66,13 +66,12 @@ export default {
     }
 
     p {
-        max-width: 64ch;
-        text-align: center;
-        margin: 0 auto;
-        color: $edward;
-        font-weight: 500;
+      max-width: 64ch;
+      text-align: center;
+      margin: 0 auto;
+      color: $edward;
+      font-weight: 500;
     }
-
   }
 }
 </style>
