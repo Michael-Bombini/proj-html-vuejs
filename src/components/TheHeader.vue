@@ -6,22 +6,13 @@
         Open Hours: Mon - Sat - 9:00 - 18:00
       </div>
       <ul class="d-flex justify-content-between">
-        <li>
-          <a href="#"><i class="fa-solid fa-phone"></i> +1 (305) 1234-5678</a>
+        <li v-for="(icon,i) in headerInfo" :key="i ">
+          <a href="#"><i :class="icon.iconClass"></i>{{icon.linkText}}</a>
         </li>
-         <li>
-          <a href="#"><i class="fa-solid fa-envelope px-2"></i>hello@example.com</a>
-        </li>
-         <li>
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-        </li>
-         <li>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        </li>
-         <li>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-        </li>
-  
+
+   
+      
+    
       </ul>
     </div>
   </header>
@@ -29,8 +20,36 @@
 
 <script>
 export default {
-  name : "TheHeader",
-  
+  name: "TheHeader",
+  data() {
+    return {
+      headerInfo: [
+        {
+          iconClass : "fa-solid fa-phone",
+          linkText : " +1 (305) 1234-5678",
+        },
+         {
+          iconClass : "fa-solid fa-envelope px-2",
+          linkText : "hello@example.com",
+        },
+         {
+          iconClass : "fa-brands fa-facebook-f",
+          linkText : "",
+        },
+         {
+          iconClass : "fa-brands fa-twitter",
+          linkText : "",
+        },
+        {
+          iconClass : "fa-brands fa-linkedin-in",
+          linkText : "",
+        },
+
+
+
+        ],
+    };
+  },
 };
 </script>
 
@@ -45,11 +64,12 @@ header {
   font-size: $text-small;
 }
 div,
-ul{
-  color: $gray-nurse;
+ul {
+  color: $edward;
 }
-a {color: $gray-nurse; display: block; padding: 0 1rem;}
-
-
-
+a {
+  color: $edward;
+  display: block;
+  padding: 0 1rem;
+}
 </style>

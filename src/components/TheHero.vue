@@ -1,40 +1,78 @@
 <template>
-    <section class="hero">
+  <section class="hero">
     <div class="overlay"></div>
-    <div class="display-1 text-light fw-bolder ">LEAD CUSTOMER</div>
-
-    </section>
+    <template>
+        <TheNav :nav="nav-link"/>
+    </template>
+    <div class="absolute">
+      <div class="container text-center">
+        <h1 class="text-light">Lead ~ Customer</h1>
+        <p>
+          Successful strategies require data analysis, creativity and customer
+          focus,taking advantage of the latest technologies to offer excellent
+          services.
+        </p>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-    export default {
-        
-    }
-
-
+import TheNav from './TheNav.vue';
+export default {
+    name: "TheHero",
+    data() {
+        return {};
+    },
+    components: { TheNav }
+};
 </script>
 
-
-
-
 <style lang="scss" scoped>
-.hero{
-    height: 80vh;
-    background-image: url(../../public/images/hero-image.png);
-    background-size: cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    position: relative;
-    
+@import "../assets/styles/variables";
+@import "../assets/styles/general";
 
-.overlay {
+.hero {
+  height: 80vh;
+  background-image: url(../../public/images/hero-image.png);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  position: relative;
+
+  .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.7);
-}
-}
+    background-color: rgba(0, 0, 0, 0.7);
+  }
 
+  .absolute {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 150px;
+
+    h1 {
+      font-size: 60px;
+      font-weight: 900;
+      margin-bottom: 2rem;
+    }
+
+    p {
+        max-width: 64ch;
+        text-align: center;
+        margin: 0 auto;
+        color: $edward;
+        font-weight: 500;
+    }
+
+  }
+}
 </style>
