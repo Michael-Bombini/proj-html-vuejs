@@ -1,6 +1,7 @@
 <template>
   <section>
     <div class="container">
+      <!-- Heading price upper area -->
       <div class="text-center">
         <div class="about">MONTHLY PLAN</div>
         <h2><span>Pricing</span> Table</h2>
@@ -11,11 +12,37 @@
         </p>
       </div>
     </div>
+
+    <!-- Pricing Tables -->
+
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-4" v-for="feature in whichFeature" :key="feature.price">
+        <h1>{{feature.title}}</h1>
+          <ul class="price-info" v-for="(n, i) in 5" :key="n">
+            <li>
+              {{ names[i] }}
+              {{ feature.hasFeature[i] }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "MonthlyPlan",
+  props: {
+    whichFeature: Array,
+  },
+  data() {
+    return {
+       names: ["Standard Accounting", "Platform Access", "Business Orientation", "Dedicated Consultant", "Personal Assistance"],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -29,14 +56,14 @@ section {
     font-size: $text-small;
     font-weight: 700;
     color: lighten($blue-lagoon, 5%);
-    margin-bottom: $medium-spacer;
+    margin-bottom: $small-spacer;
   }
 
   h2 {
     font-weight: 900;
     font-size: $text-big;
     margin-bottom: $medium-spacer;
-    color : $dark-muted;
+    color: $dark-muted;
     span {
       color: $blue-lagoon;
       background-color: darken($primary, 10%);
@@ -53,6 +80,12 @@ section {
 
   .description {
     margin-bottom: $large-spacer;
+  }
+
+  .price-table {
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 0.5rem 2rem 1rem;
   }
 }
 </style>

@@ -3,7 +3,7 @@
     <FirstCardSection :sectionTreCard="sectionTreCard" />
     <TheCompany />
     <BusinessArea :businessCards="businessCards" />
-    <MonthlyPlan />
+    <MonthlyPlan :whichFeature="whichFeature" />
     <EditorialContent />
     <NewsLetter />
     <ContactForm />
@@ -32,53 +32,72 @@ export default {
     return {
       sectionTreCard: [
         {
-          "icon": "fa-solid fa-user-group",
-          "title": "Human Capital",
-          "description":
+          icon: "fa-solid fa-user-group",
+          title: "Human Capital",
+          description:
             "Humanizing business: Harness the power of technology to improve the way people work.",
         },
         {
-          "icon": "fa-solid fa-chart-pie",
-          "title": "Core Business",
-          "description":
+          icon: "fa-solid fa-chart-pie",
+          title: "Core Business",
+          description:
             "It takes innovative approaches to transform, modernize, and run existing platforms.",
         },
-           {
+        {
           icon: "fa-solid fa-gauge-high",
           title: "Performance",
-          "description":
+          description:
             "Achieving maximum impact and value from investments in finance and supply chain.",
         },
       ],
 
-
       businessCards: [
-         {
-          "icon": "fa-solid fa-sitemap",
-          "title": "Audit & Assurance",
+        {
+          icon: "fa-solid fa-sitemap",
+          title: "Audit & Assurance",
         },
-          {
-          "icon": "fa-solid fa-briefcase",
-          "title": "Financial Advisory",
+        {
+          icon: "fa-solid fa-briefcase",
+          title: "Financial Advisory",
         },
-          {
-          "icon": "fa-solid fa-chart-simple",
-          "title": "Analytics an M&A",
+        {
+          icon: "fa-solid fa-chart-simple",
+          title: "Analytics an M&A",
         },
-          {
-          "icon": "fa-solid fa-plane-departure",
-          "title": "Middle Marketing",
+        {
+          icon: "fa-solid fa-plane-departure",
+          title: "Middle Marketing",
         },
-           {
-          "icon": "fa-solid fa-globe",
-          "title": "Legal Consulting",
+        {
+          icon: "fa-solid fa-globe",
+          title: "Legal Consulting",
         },
-          {
-          "icon": "fa-solid fa-box-open",
-          "title": "Regulatory Risk",
+        {
+          icon: "fa-solid fa-box-open",
+          title: "Regulatory Risk",
         },
-      ]
+      ],
 
+      whichFeature: [
+        {
+          icon: "fa-solid fa-rocket",
+          title: "Standard",
+          price: 490,
+          hasFeature: [true, true, false, false, false],
+        },
+        {
+          icon: "fa-solid fa-briefcase",
+          title: "Professional",
+          price: 890,
+          hasFeature: [true, true, true, false, false],
+        },
+        {
+          icon: "fa-solid fa-gem",
+          title: "Ultimate",
+          price: 1390,
+          hasFeature: [true, true, true, true, true],
+        },
+      ],
     };
   },
 };
