@@ -16,15 +16,21 @@
     <!-- Pricing Tables -->
 
     <div class="container">
-      <div class="row g-3">
+      <div class="row g-4">
         <div class="col-4" v-for="feature in whichFeature" :key="feature.price">
-        <h1>{{feature.title}}</h1>
-          <ul class="price-info" v-for="(n, i) in 5" :key="n">
-            <li>
-              {{ names[i] }}
-              {{ feature.hasFeature[i] }}
-            </li>
-          </ul>
+          <div class="price-info">
+            <div class="text-center py-4">
+              <i :class="feature.icon" class="fa-3x"></i>
+              <h3>{{ feature.title }}</h3>
+              <div class="price"><span class="dollar">$ </span><strong>{{feature.price}}</strong><span> / mo</span></div>
+            </div>
+            <ul>
+              <li  v-for="(n, i) in names.length" :key="n">
+                <span class="name">{{ names[i] }}</span>
+                <span class="feature">{{ feature.hasFeature[i] }}</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -39,7 +45,13 @@ export default {
   },
   data() {
     return {
-       names: ["Standard Accounting", "Platform Access", "Business Orientation", "Dedicated Consultant", "Personal Assistance"],
+      names: [
+        "Standard Accounting",
+        "Platform Access",
+        "Business Orientation",
+        "Dedicated Consultant",
+        "Personal Assistance",
+      ],
     };
   },
 };
@@ -82,10 +94,34 @@ section {
     margin-bottom: $large-spacer;
   }
 
-  .price-table {
-    border-radius: 8px;
+  .price-info {
+    border-radius: 10px;
     background-color: #fff;
-    padding: 0.5rem 2rem 1rem;
+    padding: 1.5rem 2rem 2rem;
+
+  i {color: $blue-lagoon; margin-bottom: $small-spacer;}
+
+  h3{
+    font-size: $text-medium;
+    font-weight: 700;
+    color: $dark-muted;
+    margin-bottom: $medium-spacer;
+  }
+
+  li {
+    margin-bottom: $small-spacer+0.4rem;
+    display: flex;
+  }
+  .dollar {font-size: $text-medium;}
+  .price {font-size: $text-big; color: $blue-lagoon;}
+  span {
+  color: $blue-lagoon; font-size: $text-small; font-weight: 500;}
+
+  .name{
+    color: darken($edward,10%);
+  }
+  
+
   }
 }
 </style>
