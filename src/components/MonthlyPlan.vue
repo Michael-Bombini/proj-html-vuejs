@@ -24,10 +24,11 @@
               <h3>{{ feature.title }}</h3>
               <div class="price"><span class="dollar">$ </span><strong>{{feature.price}}</strong><span> / mo</span></div>
             </div>
-            <ul>
+            <ul class="px-4">
               <li  v-for="(n, i) in names.length" :key="n">
                 <span class="name">{{ names[i] }}</span>
-                <span class="feature">{{ feature.hasFeature[i] }}</span>
+                <span class="feature" v-if="feature.hasFeature[i]===true"><i class="fa-solid fa-check"></i></span> 
+                <span class="feature" v-else><i class="fa-solid fa-xmark"></i></span> 
               </li>
             </ul>
           </div>
@@ -109,8 +110,9 @@ section {
   }
 
   li {
-    margin-bottom: $small-spacer+0.4rem;
+    margin-bottom: 2px;
     display: flex;
+    justify-content: space-between;
   }
   .dollar {font-size: $text-medium;}
   .price {font-size: $text-big; color: $blue-lagoon;}
@@ -121,6 +123,11 @@ section {
     color: darken($edward,10%);
   }
   
+  .feature {
+    font-size: 20px;
+    font-weight: 700;
+    padding-right: 1.5rem;
+  }
 
   }
 }

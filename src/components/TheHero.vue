@@ -77,7 +77,8 @@ export default {
     }
   }
   strong {
-    background: rgba($blue-lagoon,0.3);
+    background: rgba($blue-lagoon,0.2);
+    padding: 0.4rem 0.7rem;
   }
 }
 </style>
