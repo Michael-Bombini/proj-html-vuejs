@@ -9,10 +9,17 @@
         professionals. These are some options that you can hire.
       </p>
 
-      <div class="row">
-        <div class="col-4">
+      <div class="row g-4">
+        <div
+          class="col-4"
+          v-for="(card, i) in businessCards"
+          :key="card.title + i"
+        >
           <div class="card-section">
-
+            <i :class="card.icon"></i>
+            <h3>{{ card.title }}</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button class="btn-main outline">READ MORE</button>
           </div>
         </div>
       </div>
@@ -23,7 +30,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "BusinessArea",
+  props: {
+    businessCards: Array,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -61,6 +73,7 @@ section {
     span {
       background-color: rgba($blue-lagoon, 0.3);
       padding: 0.5rem;
+      border-radius: 4px;
     }
   }
 
@@ -75,7 +88,23 @@ section {
   }
 
   .card-section {
-    background-color: #1e2223;
+    background-color: #19191f;
+    i {
+      margin-bottom: $medium-spacer;
+      color: $blue-lagoon;
+      font-size: 40px;
+    }
+    h3 {
+      font-weight: 700;
+      color: $white;
+      margin-bottom: $small-spacer;
+    }
+    p {
+      margin-bottom: $medium-spacer;
+    }
+    button {
+      margin-bottom: $small-spacer;
+    }
   }
 }
 </style>

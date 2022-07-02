@@ -2,7 +2,7 @@
   <main>
     <FirstCardSection :sectionTreCard="sectionTreCard" />
     <TheCompany />
-    <BusinessArea />
+    <BusinessArea :businessCards="businessCards" />
     <MonthlyPlan />
     <EditorialContent />
     <NewsLetter />
@@ -32,24 +32,53 @@ export default {
     return {
       sectionTreCard: [
         {
-          icon: "fa-solid fa-user-group",
-          title: "Human Capital",
-          description:
+          "icon": "fa-solid fa-user-group",
+          "title": "Human Capital",
+          "description":
             "Humanizing business: Harness the power of technology to improve the way people work.",
         },
         {
-          icon: "fa-solid fa-chart-pie",
-          title: "Core Business",
-          description:
+          "icon": "fa-solid fa-chart-pie",
+          "title": "Core Business",
+          "description":
             "It takes innovative approaches to transform, modernize, and run existing platforms.",
         },
            {
           icon: "fa-solid fa-gauge-high",
           title: "Performance",
-          description:
+          "description":
             "Achieving maximum impact and value from investments in finance and supply chain.",
         },
       ],
+
+
+      businessCards: [
+         {
+          "icon": "fa-solid fa-sitemap",
+          "title": "Audit & Assurance",
+        },
+          {
+          "icon": "fa-solid fa-briefcase",
+          "title": "Financial Advisory",
+        },
+          {
+          "icon": "fa-solid fa-chart-simple",
+          "title": "Analytics an M&A",
+        },
+          {
+          "icon": "fa-solid fa-plane-departure",
+          "title": "Middle Marketing",
+        },
+           {
+          "icon": "fa-solid fa-globe",
+          "title": "Legal Consulting",
+        },
+          {
+          "icon": "fa-solid fa-box-open",
+          "title": "Regulatory Risk",
+        },
+      ]
+
     };
   },
 };
