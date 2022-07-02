@@ -9,8 +9,8 @@
             For 12 years we have been providing audit and warranty, financial
             advice,risk advice,taxes and related services to select clients.
           </p>
-          <div class="row g-3">
-            <div class="col-6" v-for="icon in icons" :key="icon.title">
+          <div class="row g-4">
+            <div class="col-12 col-lg-6" v-for="icon in icons" :key="icon.title">
               <div class="col-icon">
                 <div class="col-head">
                   <i :class="icon.icon"></i>
@@ -69,9 +69,10 @@ section {
 
   .square {
     position: absolute;
-    width: 150px;
+    width: 200px;
     height: 100px;
-    background: #000;
+    background-image: url("../../public/images/patterndot.svg");
+    background-size: cover;
     left: 50%;
     top: -50px;
     transform: translate(-50%);
@@ -102,7 +103,7 @@ section {
 
     strong {
       color: $blue-lagoon;
-      background-color: #daeced;
+      background-color: $primary;
       padding: 0.5rem;
     }
 

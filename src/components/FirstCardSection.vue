@@ -36,7 +36,7 @@ section {
     max-width: 400px;
     
     i {
-        background-color: #DAECED;
+        background-color: $primary;
         width: 60px;
         height: 60px;
         border-radius: 50%;
