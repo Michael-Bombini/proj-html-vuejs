@@ -90,6 +90,7 @@ export default {
           title: "Professional",
           price: 890,
           hasFeature: [true, true, true, false, false],
+          isPopular : true,
         },
         {
           icon: "fa-solid fa-gem",

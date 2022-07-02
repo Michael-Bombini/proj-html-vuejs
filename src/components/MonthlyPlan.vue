@@ -18,10 +18,11 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-4" v-for="feature in whichFeature" :key="feature.price">
-          <div class="price-info">
+          <div class="price-info" :class="{'position-relative' : feature.isPopular===true}">
             <div class="text-center py-4">
               <i :class="feature.icon" class="fa-3x"></i>
               <h3>{{ feature.title }}</h3>
+              <div v-if="feature.isPopular===true" class="popular">Most <br> Popular</div>
               <div class="price"><span class="dollar">$ </span><strong>{{feature.price}}</strong><span> / mo</span></div>
             </div>
             <ul class="px-4">
@@ -129,6 +130,29 @@ section {
     padding-right: 1.5rem;
   }
 
+
+  .popular{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    color: $white;
+    background-color: lighten($blue-lagoon,5%);
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    line-height: 20px;
+    font-size: $text-small;
+    padding: 0.2rem 0;
+  }
+
+
   }
 }
+  .price-info.position-relative {padding-bottom: 5rem;}
+  .price-info:not(.position-relative){
+    margin-top: 1.5rem;
+  }
+
 </style>
