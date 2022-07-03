@@ -8,23 +8,33 @@
           <p class="description">
             We will respond to your message as soon as possible.
           </p>
-          <div class="row g-4">
-
-              <div class="col-6">
-                <input type="text" placeholder="Name">
-              </div>
-          <div class="col-6"><input type="email" placeholder="Email"></div>
-          <div class="col-6"><input type="text" placeholder="Phone"></div>
-          <div class="col-6"><input type="text" placeholder="More Info"></div>
-          <div class="col-12">
-            <textarea placeholder="Message" rows="4" class="mb-4"></textarea>
-          </div>
+          <div class="row g-3">
+            <div class="col-6">
+              <input type="text" placeholder="Name" />
+            </div>
+            <div class="col-6"><input type="email" placeholder="Email" /></div>
+            <div class="col-6"><input type="text" placeholder="Phone" /></div>
+            <div class="col-6">
+              <input type="text" placeholder="More Info" />
+            </div>
+            <div class="col-12">
+              <textarea placeholder="Message" rows="4" class="mb-4"></textarea>
+            </div>
           </div>
           <button class="btn-main">SEND</button>
         </div>
         <div class="col-6">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum,
-          ipsum?
+          <div class="contacts">
+            <h3>Example Inc.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p class="">Praesent diam lacus,dapibus sed imperdiet consectetur.</p>
+            <ul class="my-5">
+              <li v-for="(contact,i) in contacts" :key="contact+i">
+              <i :class="contact.icon" class="mx-3"></i><span>{{contact.info}}</span>
+              </li>
+            </ul>
+            <button class="btn-main outline">VIEW MAP</button>
+          </div>
         </div>
       </div>
     </div>
@@ -32,7 +42,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name : "ContactForm",
+  props : {
+    contacts : Array,
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -70,14 +85,56 @@ section {
     margin-bottom: $large-spacer;
   }
 
-
-input , textarea {
-    background-color: rgba($edward,0.25);
+  input,
+  textarea {
+    background-color: rgba($edward, 0.25);
     border: none;
-    padding: 1rem ;
+    padding: 1rem;
     width: 100%;
     resize: none;
-}
+  }
 
+  .contacts {
+    padding: 0 $large-spacer;
+
+    h3 {
+      font-size: $text-medium;
+      color: $dark-muted;
+      font-weight: 700;
+      margin-bottom: $medium-spacer;
+    }
+    p {
+      max-width: 35ch;
+      margin-bottom: $medium-spacer;
+    }
+
+  
+
+    li {
+      margin-bottom: $medium-spacer;
+    }
+
+    i,span {
+      font-size: $text-small+6px;
+      color: $blue-lagoon;
+
+    }
+
+    i {
+      background-color: $primary;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      text-align: center;
+      line-height: 48px;
+    }
+
+
+    button {
+      color: $blue-lagoon;
+    }
+
+
+  }
 }
 </style>

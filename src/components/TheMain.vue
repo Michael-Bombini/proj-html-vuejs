@@ -4,9 +4,9 @@
     <TheCompany />
     <BusinessArea :businessCards="businessCards" />
     <MonthlyPlan :whichFeature="whichFeature" />
-    <EditorialContent :editorialPost="editorialPost"/>
+    <EditorialContent :editorialPost="editorialPost" />
     <NewsLetter />
-    <ContactForm />
+    <ContactForm :contacts="contacts"/>
   </main>
 </template>
 
@@ -90,7 +90,7 @@ export default {
           title: "Professional",
           price: 890,
           hasFeature: [true, true, true, false, false],
-          isPopular : true,
+          isPopular: true,
         },
         {
           icon: "fa-solid fa-gem",
@@ -100,29 +100,41 @@ export default {
         },
       ],
 
-      editorialPost : [
+      editorialPost: [
         {
-        author : "Andrea Miller" ,
-        daysAgo : "2",
-        title : "Increasing creativity is possible for everyone",
-        image : require("../../public/images/news-1.jpg"),
+          author: "Andrea Miller",
+          daysAgo: "2",
+          title: "Increasing creativity is possible for everyone",
+          image: require("../../public/images/news-1.jpg"),
         },
         {
-        author : "Mario Rossi" ,
-        daysAgo : "5",
-        title : "Because market research is part of the business plan",
-        image : require("../../public/images/news-2.jpg"),
+          author: "Mario Rossi",
+          daysAgo: "5",
+          title: "Because market research is part of the business plan",
+          image: require("../../public/images/news-2.jpg"),
         },
         {
-        author : "Maria Verdi" ,
-        daysAgo : "11",
-        title : "Working from home is now a trend",
-        image : require("../../public/images/news-3.jpg"),
+          author: "Maria Verdi",
+          daysAgo: "11",
+          title: "Working from home is now a trend",
+          image: require("../../public/images/news-3.jpg"),
         },
       ],
 
-
-
+      contacts: [
+        {
+          icon: "fa-solid fa-phone",
+          info: "+1 (305) 1234-5678",
+        },
+        {
+          icon: "fa-solid fa-envelope",
+          info: "hello@example.com",
+        },
+        {
+          icon: "fa-solid fa-location-dot",
+          info: "Main Avenue, 987",
+        },
+      ],
     };
   },
 };
