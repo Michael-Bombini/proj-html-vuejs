@@ -20,17 +20,20 @@
               <div class="position-relative w-100 h-100">
                 <div class="upper-info d-flex justify-content-between">
                   <div class="left">
-                  <i class="fa-solid fa-user px-2"></i>
-                  <span> {{post.author}}</span>
+                    <i class="fa-solid fa-user px-2"></i>
+                    <span> {{ post.author }}</span>
                   </div>
                   <div>
-
                     <i class="fa-solid fa-clock px-2"></i>
-                  <span>{{post.daysAgo}} Days Ago</span>
+                    <span>{{ post.daysAgo }} Days Ago</span>
                   </div>
                 </div>
-                <h3>{{ post.title }}</h3>
-
+                <div class="bottom-info">
+                  <h3>{{ post.title }}</h3>
+                  <p class="info-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -86,7 +89,27 @@ section {
   }
 }
 
-.upper-info {opacity: 0; transition: opacity 0.8s ease;}
+.upper-info {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.bottom-info {
+      position: absolute;
+      bottom: 5%;
+      text-align: center;
+
+p {
+  opacity: 1;
+  padding: 1.5rem 0;
+  max-width: 30ch;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+}
+
 
 .post {
   position: relative;
@@ -119,17 +142,20 @@ section {
 
     h3 {
       font-weight: 700;
-      position: absolute;
-      bottom: 10%;
       text-align: center;
     }
   }
-  
 }
 
-.post:hover .upper-info {
+.post:hover {
+
+.upper-info,.bottom-info p {
   opacity: 1;
   transition: opacity 0.8s ease;
+}
+
+
+
 }
 
 </style>
