@@ -4,6 +4,7 @@
     <TheHero/>
     <TheMain/>
     <TheFooter/>
+    <BottomBar/>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import TheHeader from './components/TheHeader.vue';
 import TheHero from './components/TheHero.vue';
 import TheMain from './components/TheMain.vue';
 import TheFooter from './components/TheFooter.vue';
+import BottomBar from './components/BottomBar.vue';
 
 export default {
   name: 'App',
@@ -19,7 +21,8 @@ export default {
     TheHeader,
     TheHero,
     TheMain,
-    TheFooter
+    TheFooter,
+    BottomBar
 }
 }
 </script>
