@@ -29,7 +29,7 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             <p class="">Praesent diam lacus,dapibus sed imperdiet consectetur.</p>
             <ul class="my-5">
-              <li v-for="(contact,i) in contacts" :key="contact+i">
+              <li v-for="(contact,i) in getContacts" :key="contact+i">
               <i :class="contact.icon" class="mx-3"></i><span>{{contact.info}}</span>
               </li>
             </ul>
@@ -42,10 +42,14 @@
 </template>
 
 <script>
+import { state } from '../store';
 export default {
   name : "ContactForm",
-  props : {
-    contacts : Array,
+
+  computed : {
+    getContacts(){
+      return state.contacts;
+    }
   }
 };
 </script>
