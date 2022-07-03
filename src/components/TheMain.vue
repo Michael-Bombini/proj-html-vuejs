@@ -4,7 +4,7 @@
     <TheCompany />
     <BusinessArea :businessCards="businessCards" />
     <MonthlyPlan :whichFeature="whichFeature" />
-    <EditorialContent />
+    <EditorialContent :editorialPost="editorialPost"/>
     <NewsLetter />
     <ContactForm />
   </main>
@@ -99,6 +99,30 @@ export default {
           hasFeature: [true, true, true, true, true],
         },
       ],
+
+      editorialPost : [
+        {
+        author : "Andrea Miller" ,
+        daysAgo : "2",
+        title : "Increasing creativity is possible for everyone",
+        image : require("../../public/images/news-1.jpg"),
+        },
+        {
+        author : "Mario Rossi" ,
+        daysAgo : "5",
+        title : "Because market research is part of the business plan",
+        image : require("../../public/images/news-2.jpg"),
+        },
+        {
+        author : "Maria Verdi" ,
+        daysAgo : "11",
+        title : "Working from home is now a trend",
+        image : require("../../public/images/news-3.jpg"),
+        },
+      ],
+
+
+
     };
   },
 };

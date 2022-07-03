@@ -80,7 +80,7 @@ section {
     color: $dark-muted;
     span {
       color: $blue-lagoon;
-      background-color: darken($primary, 10%);
+      background-color: $primary;
       padding: 0.5rem;
       border-radius: 4px;
     }

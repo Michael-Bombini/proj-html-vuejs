@@ -3,12 +3,14 @@
     <div class="container">
       <div class="about">OUR BUSINESS AREAS</div>
       <h2>Excellence in <span>Services</span></h2>
+      <div class="d-flex align-items-baseline justify-content-between">
       <p class="description">
         We are leaders in providing consultancy services with a set of
         cutting-edge technologies and a team of experienced and renowned
         professionals. These are some options that you can hire.
       </p>
-
+      <button class="btn-main outline py-2 my-2">SEE ALL</button>
+      </div>
       <div class="row g-4">
         <div
           class="col-4"
