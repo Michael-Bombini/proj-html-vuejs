@@ -90,7 +90,7 @@ section {
   }
 
   .card-section {
-    background-color: #19191f;
+    background-color: $shark;
     i {
       margin-bottom: $medium-spacer;
       color: $blue-lagoon;
