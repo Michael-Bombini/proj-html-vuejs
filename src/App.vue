@@ -3,6 +3,7 @@
     <TheHeader/>
     <TheHero/>
     <TheMain/>
+    <TheFooter/>
   </div>
 </template>
 
@@ -10,13 +11,15 @@
 import TheHeader from './components/TheHeader.vue';
 import TheHero from './components/TheHero.vue';
 import TheMain from './components/TheMain.vue';
+import TheFooter from './components/TheFooter.vue';
 
 export default {
   name: 'App',
   components: {
     TheHeader,
     TheHero,
-    TheMain
+    TheMain,
+    TheFooter
 }
 }
 </script>
