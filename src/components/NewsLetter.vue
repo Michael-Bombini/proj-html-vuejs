@@ -5,7 +5,7 @@
       <div class="row align-items-center">
         <div class="col-6">
             <div class="px-5 mx-5">
-          <div class="about">MONTHLY PLAN</div>
+          <div class="about">NEWSLETTER</div>
           <h2><span>Know</span> First</h2>
           <p class="description">
             Follow closely and receive content about our company and the news of
@@ -78,7 +78,7 @@ section {
   p {
     font-size: $text-small;
     max-width: 42ch;
-    color: rgba($white, 0.5);
+    color: rgba($white, 0.7);
   }
 
   .description {
