@@ -17,7 +17,7 @@
 
     <div class="container">
       <div class="row g-4">
-        <div class="col-4" v-for="feature in whichFeature" :key="feature.price">
+        <div class="col-sm-12 col-lg-4" v-for="feature in whichFeature" :key="feature.price">
           <div
             class="price-info position-relative"
             :class="{ 'position-relative': feature.isPopular === true }"

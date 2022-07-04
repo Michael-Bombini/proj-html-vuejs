@@ -1,8 +1,8 @@
 <template>
     <section>
       <div class="container">
-        <div class="row">
-            <div class="col-4" v-for="(card,i) in sectionTreCard" :key="card + i">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4" v-for="(card,i) in sectionTreCard" :key="card + i">
                 <div class="card-section">
                     <i :class="card.icon"></i>
                     <h2>{{card.title}}</h2>

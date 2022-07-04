@@ -13,7 +13,7 @@
       </div>
       <div class="row g-4">
         <div
-          class="col-4"
+          class="col-sm-12 col-md-6 col-lg-4"
           v-for="(card, i) in businessCards"
           :key="card.title + i"
         >

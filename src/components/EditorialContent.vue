@@ -12,7 +12,7 @@
       </div>
       <!-- Card Area -->
       <div class="row g-4">
-        <div class="col-4" v-for="(post, i) in editorialPost" :key="post + i" :class="{'col-6' : post.hide!==undefined}">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4" v-for="(post, i) in editorialPost" :key="post + i" :class="{'col-sm-12 col-lg-6 col-xl-6' : post.hide!==undefined}">
           <div class="post" v-if="!post.hide">
             <img :src="post.image" class="post-image" alt="" />
             <div class="overlay"></div>

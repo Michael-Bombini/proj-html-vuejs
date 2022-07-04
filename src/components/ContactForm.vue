@@ -2,14 +2,14 @@
   <section>
     <div class="container">
       <div class="row">
-        <div class="col-6">
+        <div class="col-md-12 col-lg-6">
           <div class="about">SEND A MESSAGE</div>
           <h2>Get in <span> Touch</span></h2>
           <p class="description">
             We will respond to your message as soon as possible.
           </p>
           <div class="row g-3">
-            <div class="col-6">
+            <div class="col-md-12 col-lg-6">
               <div class="position-relative">
 
                 <input type="text" placeholder="Name" />

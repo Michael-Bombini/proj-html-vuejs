@@ -2,7 +2,7 @@
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-3">
+        <div class="col-md-6 col-lg-3">
           <img class="logo" src="../../public/images/logo.svg" alt="" />
           <p>A functional HTML Template for Corporate & Business.</p>
           <ul class="mb-4">
@@ -17,7 +17,7 @@
           </ul>
           <button class="btn-main outline mt-2">GET IN TOUCH</button>
         </div>
-        <div class="col-3" v-for="(content,i) in getFooterContent" :key="content+i">
+        <div class="col-md-6 col-lg-3" v-for="(content,i) in getFooterContent" :key="content+i">
             <div class="footer-card">
                 <h2>{{content.title}}</h2>
                 <ul>

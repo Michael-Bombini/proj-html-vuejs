@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Heading price upper area -->
       <div class="row align-items-center">
-        <div class="col-6">
+        <div class="col-md-12 col-lg-6">
             <div class="px-5 mx-5">
           <div class="about">NEWSLETTER</div>
           <h2><span>Know</span> First</h2>
@@ -13,7 +13,7 @@
           </p>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-md-12 col-lg-6">
             <form>
           <div class="form-floating mb-3">
             <input

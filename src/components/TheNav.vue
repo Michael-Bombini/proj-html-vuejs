@@ -4,7 +4,7 @@
       <div>
         <img src="../../public/images/logo.svg" class="logo" alt="" />
       </div>
-      <ul class="d-flex justify-content-between align-items-center">
+      <ul class="d-none d-md-flex justify-content-between align-items-center">
         <li v-for="link in navLink" :key="link"><a href="#">{{link}}</a></li>
         <li><button class="mx-4 btn-main">Get in touch</button></li>
     

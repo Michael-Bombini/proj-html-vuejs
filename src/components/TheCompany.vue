@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="row m-auto">
-      <div class="col-6 d-flex justify-content-end">
+      <div class="col-sm-12 col-md-6 d-flex justify-content-end">
         <div class="left-info">
           <div class="about">ABOUT THE NETWORK</div>
           <h2><strong>The</strong> <span>Company</span></h2>
@@ -22,7 +22,7 @@
           </div>
         </div>
       </div>
-      <div class="col-6 p-0">
+      <div class="col-sm-12 col-md-6 p-0">
         <img src="../../public/images/about-3.jpg" alt="" />
       </div>
     </div>

@@ -5,7 +5,7 @@
         <i class="fa-solid fa-clock px-1"></i>
         Open Hours: Mon - Sat - 9:00 - 18:00
       </div>
-      <ul class="d-flex justify-content-between">
+      <ul class="d-none d-md-flex justify-content-between">
         <li v-for="(icon,i) in headerInfo" :key="i ">
           <a href="#"><i :class="icon.iconClass"></i>{{icon.linkText}}</a>
         </li>
