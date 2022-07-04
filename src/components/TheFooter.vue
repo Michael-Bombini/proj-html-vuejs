@@ -83,5 +83,12 @@ h2 {
 
 }
 
+li {
+  &:hover {
+    color: $blue-lagoon;
+    cursor: pointer;
+  }
+}
+
 }
 </style>
