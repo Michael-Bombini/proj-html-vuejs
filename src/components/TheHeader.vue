@@ -71,5 +71,12 @@ a {
   color: $edward;
   display: block;
   padding: 0 1rem;
+
+&:hover {
+  color: $blue-lagoon;
 }
+
+}
+
+
 </style>

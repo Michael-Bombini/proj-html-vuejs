@@ -80,5 +80,16 @@ export default {
     background: rgba($blue-lagoon,0.2);
     padding: 0.4rem 0.7rem;
   }
+
+
+button {
+  transition: transform 0.5s ease , background 0.5s ease;
+  &:hover {
+    transform: translateY(-10px);
+    transition: transform 0.5s ease , background 0.3s ease;
+    background: $blue-lagoon;
+  }
+}
+
 }
 </style>

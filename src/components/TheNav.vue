@@ -38,7 +38,13 @@ nav {
   z-index: 999;
   position: relative;
   
-  a{color: $white; text-transform: uppercase; padding: 0 0.8rem; font-weight: 600;}
+  a{color: $white; text-transform: uppercase; padding: 0 0.8rem; font-weight: 600;
+  
+  &:hover {
+  color: $blue-lagoon;
+}
+
+  }
 
   .logo {
     width: 128px;
