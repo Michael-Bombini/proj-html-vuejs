@@ -10,12 +10,16 @@
           </p>
           <div class="row g-3">
             <div class="col-6">
-              <input type="text" placeholder="Name" />
+              <div class="position-relative">
+
+                <input type="text" placeholder="Name" />
+              <img src="../../public/images/image (1).png" class="image-absolute" alt="">
+              </div>
             </div>
             <div class="col-6"><input type="email" placeholder="Email" /></div>
             <div class="col-6"><input type="text" placeholder="Phone" /></div>
             <div class="col-6">
-              <input type="text" placeholder="More Info" />
+              <select type="text" placeholder="More Info" />
             </div>
             <div class="col-12">
               <textarea placeholder="Message" rows="4" class="mb-4"></textarea>
@@ -90,6 +94,7 @@ section {
   }
 
   input,
+  select,
   textarea {
     background-color: rgba($edward, 0.25);
     border: none;
@@ -137,8 +142,15 @@ section {
     button {
       color: $blue-lagoon;
     }
-
-
   }
+
+  .col-6{position: relative;}
+  .image-absolute {
+    position: absolute;
+    top: 40%;
+    left: 90%;
+  }
+
+
 }
 </style>
