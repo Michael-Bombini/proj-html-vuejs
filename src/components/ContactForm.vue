@@ -19,7 +19,10 @@
             <div class="col-6"><input type="email" placeholder="Email" /></div>
             <div class="col-6"><input type="text" placeholder="Phone" /></div>
             <div class="col-6">
-              <select type="text" placeholder="More Info" />
+              <div class="position-relative">
+                <input type="text" placeholder="More Info" />
+                <i class="fa-solid fa-angle-down image-absolute"></i>
+              </div>
             </div>
             <div class="col-12">
               <textarea placeholder="Message" rows="4" class="mb-4"></textarea>
