@@ -91,10 +91,12 @@ section {
 
   .card-section {
     background-color: $shark;
+
     i {
       margin-bottom: $medium-spacer;
       color: $blue-lagoon;
       font-size: 40px;
+      transition: color 0.7s ease;
     }
     h3 {
       font-weight: 700;
@@ -106,7 +108,21 @@ section {
     }
     button {
       margin-bottom: $small-spacer;
+      transition: background-color 0.7s ease;
     }
+
+  &:hover {
+    i {
+      color: #fff;
+      transition: color 0.7s ease;
+      
+    }
+    button {
+      transition: background-color 0.7s ease;
+      background-color: $blue-lagoon;
+    }
+  }
+
   }
 }
 </style>
