@@ -8,12 +8,12 @@
           Every week we publish content about what is best in the business
           world.
         </p>
-        <button class="btn-main">SEE ALL</button>
+        <button class="btn-main" @click="showAll()">{{textSwitch}}</button>
       </div>
       <!-- Card Area -->
       <div class="row g-4">
-        <div class="col-4" v-for="(post, i) in editorialPost" :key="post + i">
-          <div class="post">
+        <div class="col-4" v-for="(post, i) in editorialPost" :key="post + i" :class="{'col-6' : post.hide!==undefined}">
+          <div class="post" v-if="!post.hide">
             <img :src="post.image" class="post-image" alt="" />
             <div class="overlay"></div>
             <div class="post-info">
@@ -46,8 +46,29 @@
 <script>
 export default {
   name: "EditorialContent",
+  data(){
+    return{
+      textSwitch : "See All",
+      switched : false,
+    }
+  },
   props: {
     editorialPost: Array,
+  },
+  methods : {
+
+   showAll(){
+    if(this.textSwitch==="See All")
+      this.textSwitch = "See less";
+    else
+      this.textSwitch = "See All";
+      
+      this.editorialPost.forEach(post => {
+        if(post.hide!==undefined || post.hide===true )
+          post.hide = !post.hide;
+        
+      });
+   }
   },
 };
 </script>
@@ -128,6 +149,7 @@ p {
     right: 0;
     bottom: 0;
     border-radius: 20px;
+    transition: backdrop-filter 0.8s ease;
   }
 
   .post-info {
@@ -145,9 +167,13 @@ p {
       text-align: center;
     }
   }
-}
 
-.post:hover {
+&:hover {
+
+  .overlay {
+    backdrop-filter : blur(4px);
+    transition: backdrop-filter 0.5s ease;
+  }
 
 .upper-info,.bottom-info p {
   opacity: 1;
@@ -155,7 +181,12 @@ p {
 }
 
 
+}
 
 }
+
+
+
+
 
 </style>

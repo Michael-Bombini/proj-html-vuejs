@@ -6,7 +6,7 @@
     <MonthlyPlan :whichFeature="whichFeature" />
     <EditorialContent :editorialPost="editorialPost" />
     <NewsLetter />
-    <ContactForm/>
+    <ContactForm />
   </main>
 </template>
 
@@ -119,9 +119,21 @@ export default {
           title: "Working from home is now a trend",
           image: require("../../public/images/news-3.jpg"),
         },
+        {
+          author: "Tizio Caio",
+          daysAgo: "17",
+          title: "Working from office is not a trend",
+          image: require("../../public/images/news-4.jpg"),
+          hide: true,
+        },
+        {
+          author: "Pippo Bruno",
+          daysAgo: "23",
+          title: "veniam, quis nostrud exercitation ullamco laboris",
+          image: require("../../public/images/news-5.jpg"),
+          hide: true,
+        },
       ],
-
-
     };
   },
 };
