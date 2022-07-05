@@ -1,5 +1,5 @@
 <template>
-  <nav class="py-1">
+  <nav class="py-1" :class="{'sticky-color' : stickyColor}">
     <div class="container d-flex justify-content-between align-items-center">
       <div>
         <img src="../../public/images/logo.svg" class="logo" alt="" />
@@ -19,14 +19,26 @@ import { state } from '../store';
 export default {
   name: "TheNav",
   data() {
-    return {};
+    return {
+      stickyColor : false,
+    };
   },
   
   computed : {
     navLink(){
         return state.navLink;
     }
-  }
+  },
+
+  mounted() {
+      window.addEventListener("scroll", () => {
+      this.scrolled = window.scrollY;
+      if(this.scrolled>=100)
+        this.stickyColor = true;
+        else
+        this.stickyColor = false;
+    });
+  } 
 
 };
 </script>
@@ -51,6 +63,11 @@ nav {
     height: 64px;
   }
 
-
 }
+.sticky-color {
+  position: sticky;
+  top: 0px;
+  background-image : linear-gradient(-45deg, #1b4965 0%, #0d1b2a 100%);
+}
+
 </style>
