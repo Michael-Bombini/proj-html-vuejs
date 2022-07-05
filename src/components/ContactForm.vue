@@ -40,7 +40,11 @@
               <i :class="contact.icon" class="mx-3"></i><span>{{contact.info}}</span>
               </li>
             </ul>
-            <button class="btn-main outline">VIEW MAP</button>
+            <button class="btn-main outline" @click="showMap()">{{view}}</button>
+     
+
+              <iframe v-if="map" class="maps-google" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3017.051376682425!2d-74.1377483!3d40.8707467!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fec8aa3213e5%3A0xab6c00ef8f54a598!2s987%20Main%20Ave%2C%20Passaic%2C%20NJ%2007055%2C%20Stati%20Uniti!5e0!3m2!1sit!2sit!4v1657012896035!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           
           </div>
         </div>
       </div>
@@ -52,12 +56,30 @@
 import { state } from '../store';
 export default {
   name : "ContactForm",
-
+  data(){
+    return{
+      map : false,
+      view : "VIEW MAP",
+    }
+  },
   computed : {
     getContacts(){
       return state.contacts;
     }
+  },
+
+  methods: {
+    showMap(){
+      if(!this.map)
+      this.view = "HIDE MAP";
+      else
+      this.view = "VIEW MAP";
+      
+      this.map = !this.map;
+    }
   }
+
+
 };
 </script>
 
@@ -155,5 +177,16 @@ section {
   }
 
 
+}
+
+
+.maps-google  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
 }
 </style>
