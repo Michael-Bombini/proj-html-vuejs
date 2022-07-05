@@ -2,25 +2,25 @@
   <section>
     <div class="container">
       <!-- Heading price upper area -->
-      <div class="row align-items-center">
+      <div class="row align-items-center" v-if="stato === 0">
         <div class="col-md-12 col-lg-6">
-            <div class="px-5 mx-5">
-          <div class="about">NEWSLETTER</div>
-          <h2><span>Know</span> First</h2>
-          <p class="description">
-            Follow closely and receive content about our company and the news of
-            the current market.
-          </p>
+          <div class="px-5 mx-5">
+            <div class="about">NEWSLETTER</div>
+            <h2><span>Know</span> First</h2>
+            <p class="description">
+              Follow closely and receive content about our company and the news
+              of the current market.
+            </p>
           </div>
         </div>
         <div class="col-md-12 col-lg-6">
-            <form>
           <div class="form-floating mb-3">
             <input
               type="text"
               class="form-control"
               id="name"
               placeholder="Name"
+              v-model="inputName"
             />
             <label for="name">Name</label>
           </div>
@@ -30,11 +30,25 @@
               class="form-control"
               id="email"
               placeholder="Email"
+              v-model="inputEmail"
             />
             <label for="email">Email</label>
           </div>
-          <button class="btn-main px-4 py-3">SUBSCRIBE</button>
-          </form>
+          <button class="btn-main px-4 py-3" @click="checkValidation()">
+            SUBSCRIBE
+          </button>
+        </div>
+      </div>
+      <div v-else-if="stato === 1">
+        <div class="alert alert-danger text-center" role="alert">
+          WARNING! Error on data insert. check again
+        </div>
+        <button class="btn-main outline" @click="stato = 0">GO BACK</button>
+      </div>
+      <div v-else-if="stato === 2">
+        <div class="alert alert-success text-center" role="alert">
+          <div>Congrats You've succesfully subscripted to our NewsLetter</div>
+          <div>You will receive important update from us every 1/2 Weeks.</div>
         </div>
       </div>
     </div>
@@ -42,7 +56,22 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "NewsLetter",
+  data() {
+    return {
+      inputName: "",
+      inputEmail: "",
+      stato: 0,
+    };
+  },
+  methods: {
+    checkValidation() {
+      if (this.inputName === "" || this.inputEmail === "") this.stato = 1;
+      else this.stato = 2;
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -85,16 +114,14 @@ section {
     margin-bottom: $large-spacer;
   }
 
-
-input {
-    background-color: rgba($white,0.5);
+  input {
+    background-color: rgba($white, 0.5);
     width: 450px;
-    margin-bottom: $small-spacer+0.5rem;
+    margin-bottom: $small-spacer + 0.5rem;
     border-radius: 4px;
     &active {
-        background-color: rgba($white,0.7);
+      background-color: rgba($white, 0.7);
     }
-}
-
+  }
 }
 </style>
