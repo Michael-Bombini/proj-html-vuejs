@@ -20,7 +20,7 @@
         <div class="col-sm-12 col-lg-4" v-for="feature in whichFeature" :key="feature.price">
           <div
             class="price-info position-relative"
-            :class="{ 'position-relative': feature.isPopular === true }"
+            :class="{ 'popular': feature.isPopular === true }"
           >
             <div class="text-center py-4">
               <i :class="feature.icon" class="fa-3x"></i>
@@ -198,10 +198,10 @@ section {
     }
   }
 }
-.price-info.position-relative {
+.price-info.popular {
   padding-bottom: 5rem;
 }
-.price-info:not(.position-relative) {
+.price-info:not(.popular) {
   margin-top: 1.5rem;
 }
 </style>
