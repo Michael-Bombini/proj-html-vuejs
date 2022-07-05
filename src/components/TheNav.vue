@@ -65,8 +65,10 @@ nav {
   }
 }
 .sticky-color {
-  position: sticky;
+  position: fixed;
   top: 0px;
+  left: 0;
+  right: 0;
   background-image: linear-gradient(-45deg, #1b4965 0%, #0d1b2a 100%);
 }
 </style>
