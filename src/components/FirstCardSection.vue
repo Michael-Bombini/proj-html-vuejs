@@ -1,65 +1,61 @@
 <template>
-    <section>
-      <div class="container">
-        <div class="row g-4 justify-content-center">
-            <div class="col-md-6 col-lg-4" v-for="(card,i) in sectionTreCard" :key="card + i">
-                <div class="card-section">
-                    <i :class="card.icon"></i>
-                    <h2>{{card.title}}</h2>
-                    <p>{{card.description}}</p>
-                </div>
-            </div>
+  <section>
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div
+          class="col-md-6 col-lg-4"
+          v-for="(card, i) in sectionTreCard"
+          :key="card + i"
+        >
+          <div class="card-section">
+            <i :class="card.icon"></i>
+            <h2>{{ card.title }}</h2>
+            <p>{{ card.description }}</p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 </template>
 
 <script>
-    export default {
-        name: "FirstCardSection",
-        props : {
-            sectionTreCard : Array,
-            
-        }
-    }
+export default {
+  name: "FirstCardSection",
+  props: {
+    sectionTreCard: Array,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/styles/variables";
 @import "../assets/styles/general";
 section {
-    padding: $section-spacer 0;
-    background-color: $gray-nurse;
+  padding: $section-spacer 0;
+  background-color: $gray-nurse;
 
- .card-section {
+  .card-section {
     background: $white;
     max-width: 400px;
-    
-    
+
     i {
-        background-color: $primary;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 60px;
-        color: $blue-lagoon;
+      background-color: $primary;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 60px;
+      color: $blue-lagoon;
     }
 
     h2 {
-        color: $dark-muted;
-        font-weight: 700;
+      color: $dark-muted;
+      font-weight: 700;
     }
 
     p {
-        color: $slate-gray;
+      color: $slate-gray;
     }
-    
-    }   
-
-
-
+  }
 }
-
-
 </style>

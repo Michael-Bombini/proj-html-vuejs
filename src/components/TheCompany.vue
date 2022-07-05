@@ -10,7 +10,11 @@
             advice,risk advice,taxes and related services to select clients.
           </p>
           <div class="row g-4">
-            <div class="col-12 col-lg-6" v-for="icon in icons" :key="icon.title">
+            <div
+              class="col-12 col-lg-6"
+              v-for="icon in icons"
+              :key="icon.title"
+            >
               <div class="col-icon">
                 <div class="col-head">
                   <i :class="icon.icon"></i>

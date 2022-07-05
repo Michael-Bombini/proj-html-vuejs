@@ -11,9 +11,12 @@
           <div class="row g-3">
             <div class="col-md-12 col-lg-6">
               <div class="position-relative">
-
                 <input type="text" placeholder="Name" />
-              <img src="../../public/images/image (1).png" class="image-absolute" alt="">
+                <img
+                  src="../../public/images/image (1).png"
+                  class="image-absolute"
+                  alt=""
+                />
               </div>
             </div>
             <div class="col-6"><input type="email" placeholder="Email" /></div>
@@ -34,17 +37,30 @@
           <div class="contacts">
             <h3>Example Inc.</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <p class="">Praesent diam lacus,dapibus sed imperdiet consectetur.</p>
+            <p class="">
+              Praesent diam lacus,dapibus sed imperdiet consectetur.
+            </p>
             <ul class="my-5">
-              <li v-for="(contact,i) in getContacts" :key="contact+i">
-              <i :class="contact.icon" class="mx-3"></i><span>{{contact.info}}</span>
+              <li v-for="(contact, i) in getContacts" :key="contact + i">
+                <i :class="contact.icon" class="mx-3"></i
+                ><span>{{ contact.info }}</span>
               </li>
             </ul>
-            <button class="btn-main outline" @click="showMap()">{{view}}</button>
-     
+            <button class="btn-main outline" @click="showMap()">
+              {{ view }}
+            </button>
 
-              <iframe v-if="map" class="maps-google" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3017.051376682425!2d-74.1377483!3d40.8707467!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fec8aa3213e5%3A0xab6c00ef8f54a598!2s987%20Main%20Ave%2C%20Passaic%2C%20NJ%2007055%2C%20Stati%20Uniti!5e0!3m2!1sit!2sit!4v1657012896035!5m2!1sit!2sit" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-           
+            <iframe
+              v-if="map"
+              class="maps-google"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3017.051376682425!2d-74.1377483!3d40.8707467!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2fec8aa3213e5%3A0xab6c00ef8f54a598!2s987%20Main%20Ave%2C%20Passaic%2C%20NJ%2007055%2C%20Stati%20Uniti!5e0!3m2!1sit!2sit!4v1657012896035!5m2!1sit!2sit"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -53,33 +69,29 @@
 </template>
 
 <script>
-import { state } from '../store';
+import { state } from "../store";
 export default {
-  name : "ContactForm",
-  data(){
-    return{
-      map : false,
-      view : "VIEW MAP",
-    }
+  name: "ContactForm",
+  data() {
+    return {
+      map: false,
+      view: "VIEW MAP",
+    };
   },
-  computed : {
-    getContacts(){
+  computed: {
+    getContacts() {
       return state.contacts;
-    }
+    },
   },
 
   methods: {
-    showMap(){
-      if(!this.map)
-      this.view = "HIDE MAP";
-      else
-      this.view = "VIEW MAP";
-      
+    showMap() {
+      if (!this.map) this.view = "HIDE MAP";
+      else this.view = "VIEW MAP";
+
       this.map = !this.map;
-    }
-  }
-
-
+    },
+  },
 };
 </script>
 
@@ -142,16 +154,14 @@ section {
       margin-bottom: $medium-spacer;
     }
 
-  
-
     li {
       margin-bottom: $medium-spacer;
     }
 
-    i,span {
-      font-size: $text-small+6px;
+    i,
+    span {
+      font-size: $text-small + 6px;
       color: $blue-lagoon;
-
     }
 
     i {
@@ -163,30 +173,28 @@ section {
       line-height: 48px;
     }
 
-
     button {
       color: $blue-lagoon;
     }
   }
 
-  .col-6{position: relative;}
+  .col-6 {
+    position: relative;
+  }
   .image-absolute {
     position: absolute;
     top: 40%;
     left: 90%;
   }
-
-
 }
 
-
-.maps-google  {
+.maps-google {
   display: flex;
   justify-content: center;
   align-items: center;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 </style>

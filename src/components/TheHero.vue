@@ -1,7 +1,7 @@
 <template>
   <section class="hero">
     <div class="overlay"></div>
-      <TheNav />
+    <TheNav />
 
     <div class="absolute">
       <div class="container text-center">
@@ -23,8 +23,7 @@ import TheNav from "./TheNav.vue";
 export default {
   name: "TheHero",
   data() {
-    return {
-    };
+    return {};
   },
   components: { TheNav },
 };
@@ -77,19 +76,17 @@ export default {
     }
   }
   strong {
-    background: rgba($blue-lagoon,0.2);
+    background: rgba($blue-lagoon, 0.2);
     padding: 0.4rem 0.7rem;
   }
 
-
-button {
-  transition: transform 0.5s ease , background 0.5s ease;
-  &:hover {
-    transform: translateY(-10px);
-    transition: transform 0.5s ease , background 0.3s ease;
-    background: $blue-lagoon;
+  button {
+    transition: transform 0.5s ease, background 0.5s ease;
+    &:hover {
+      transform: translateY(-10px);
+      transition: transform 0.5s ease, background 0.3s ease;
+      background: $blue-lagoon;
+    }
   }
-}
-
 }
 </style>

@@ -8,11 +8,16 @@
           Every week we publish content about what is best in the business
           world.
         </p>
-        <button class="btn-main" @click="showAll()">{{textSwitch}}</button>
+        <button class="btn-main" @click="showAll()">{{ textSwitch }}</button>
       </div>
       <!-- Card Area -->
       <div class="row g-4">
-        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4" v-for="(post, i) in editorialPost" :key="post + i" :class="{'col-sm-12 col-lg-6 col-xl-6' : post.hide!==undefined}">
+        <div
+          class="col-sm-12 col-md-6 col-lg-6 col-xl-4"
+          v-for="(post, i) in editorialPost"
+          :key="post + i"
+          :class="{ 'col-sm-12 col-lg-6 col-xl-6': post.hide !== undefined }"
+        >
           <div class="post" v-if="!post.hide">
             <img :src="post.image" class="post-image" alt="" />
             <div class="overlay"></div>
@@ -46,29 +51,25 @@
 <script>
 export default {
   name: "EditorialContent",
-  data(){
-    return{
-      textSwitch : "See All",
-      switched : false,
-    }
+  data() {
+    return {
+      textSwitch: "See All",
+      switched: false,
+    };
   },
   props: {
     editorialPost: Array,
   },
-  methods : {
+  methods: {
+    showAll() {
+      if (this.textSwitch === "See All") this.textSwitch = "See less";
+      else this.textSwitch = "See All";
 
-   showAll(){
-    if(this.textSwitch==="See All")
-      this.textSwitch = "See less";
-    else
-      this.textSwitch = "See All";
-      
-      this.editorialPost.forEach(post => {
-        if(post.hide!==undefined || post.hide===true )
+      this.editorialPost.forEach((post) => {
+        if (post.hide !== undefined || post.hide === true)
           post.hide = !post.hide;
-        
       });
-   }
+    },
   },
 };
 </script>
@@ -116,21 +117,19 @@ section {
 }
 
 .bottom-info {
-      position: absolute;
-      bottom: 5%;
-      text-align: center;
+  position: absolute;
+  bottom: 5%;
+  text-align: center;
 
-p {
-  opacity: 1;
-  padding: 1.5rem 0;
-  max-width: 30ch;
-  margin: 0 auto;
-  opacity: 0;
-  transition: opacity 0.8s ease;
+  p {
+    opacity: 1;
+    padding: 1.5rem 0;
+    max-width: 30ch;
+    margin: 0 auto;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
 }
-
-}
-
 
 .post {
   position: relative;
@@ -168,25 +167,17 @@ p {
     }
   }
 
-&:hover {
+  &:hover {
+    .overlay {
+      backdrop-filter: blur(4px);
+      transition: backdrop-filter 0.5s ease;
+    }
 
-  .overlay {
-    backdrop-filter : blur(4px);
-    transition: backdrop-filter 0.5s ease;
+    .upper-info,
+    .bottom-info p {
+      opacity: 1;
+      transition: opacity 0.8s ease;
+    }
   }
-
-.upper-info,.bottom-info p {
-  opacity: 1;
-  transition: opacity 0.8s ease;
 }
-
-
-}
-
-}
-
-
-
-
-
 </style>

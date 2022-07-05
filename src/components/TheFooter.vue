@@ -17,13 +17,20 @@
           </ul>
           <button class="btn-main outline mt-2">GET IN TOUCH</button>
         </div>
-        <div class="col-md-6 col-lg-3" v-for="(content,i) in getFooterContent" :key="content+i">
-            <div class="footer-card">
-                <h2>{{content.title}}</h2>
-                <ul>
-                    <li class="mb-2" v-for="link in content.links" :key="link"><i class="fa-solid fa-angle-right"></i><span class="mx-3">{{link}}</span></li>
-                </ul>
-            </div>
+        <div
+          class="col-md-6 col-lg-3"
+          v-for="(content, i) in getFooterContent"
+          :key="content + i"
+        >
+          <div class="footer-card">
+            <h2>{{ content.title }}</h2>
+            <ul>
+              <li class="mb-2" v-for="link in content.links" :key="link">
+                <i class="fa-solid fa-angle-right"></i
+                ><span class="mx-3">{{ link }}</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -39,9 +46,9 @@ export default {
     getContacts() {
       return state.contacts;
     },
-    getFooterContent(){
-        return state.footerContent;
-    }
+    getFooterContent() {
+      return state.footerContent;
+    },
   },
 };
 </script>
@@ -64,31 +71,26 @@ footer {
     margin-bottom: $medium-spacer;
   }
 
-
-.footer-card {
+  .footer-card {
     height: 100%;
-    width:  100%;
+    width: 100%;
     padding: $large-spacer;
     background: $shark;
     border-radius: 14px;
 
-h2 {
-    font-size: $text-medium;
-    color: $white;
-    font-weight: 700;
-    margin-bottom: $medium-spacer;
-}
-
-
-
-}
-
-li {
-  &:hover {
-    color: $blue-lagoon;
-    cursor: pointer;
+    h2 {
+      font-size: $text-medium;
+      color: $white;
+      font-weight: 700;
+      margin-bottom: $medium-spacer;
+    }
   }
-}
 
+  li {
+    &:hover {
+      color: $blue-lagoon;
+      cursor: pointer;
+    }
+  }
 }
 </style>

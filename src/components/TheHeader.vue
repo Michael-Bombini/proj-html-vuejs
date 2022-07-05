@@ -6,13 +6,9 @@
         Open Hours: Mon - Sat - 9:00 - 18:00
       </div>
       <ul class="d-none d-md-flex justify-content-between">
-        <li v-for="(icon,i) in headerInfo" :key="i ">
-          <a href="#"><i :class="icon.iconClass"></i>{{icon.linkText}}</a>
+        <li v-for="(icon, i) in headerInfo" :key="i">
+          <a href="#"><i :class="icon.iconClass"></i>{{ icon.linkText }}</a>
         </li>
-
-   
-      
-    
       </ul>
     </div>
   </header>
@@ -25,29 +21,26 @@ export default {
     return {
       headerInfo: [
         {
-          iconClass : "fa-solid fa-phone",
-          linkText : " +1 (305) 1234-5678",
-        },
-         {
-          iconClass : "fa-solid fa-envelope px-2",
-          linkText : "hello@example.com",
-        },
-         {
-          iconClass : "fa-brands fa-facebook-f",
-          linkText : "",
-        },
-         {
-          iconClass : "fa-brands fa-twitter",
-          linkText : "",
+          iconClass: "fa-solid fa-phone",
+          linkText: " +1 (305) 1234-5678",
         },
         {
-          iconClass : "fa-brands fa-linkedin-in",
-          linkText : "",
+          iconClass: "fa-solid fa-envelope px-2",
+          linkText: "hello@example.com",
         },
-
-
-
-        ],
+        {
+          iconClass: "fa-brands fa-facebook-f",
+          linkText: "",
+        },
+        {
+          iconClass: "fa-brands fa-twitter",
+          linkText: "",
+        },
+        {
+          iconClass: "fa-brands fa-linkedin-in",
+          linkText: "",
+        },
+      ],
     };
   },
 };
@@ -72,11 +65,8 @@ a {
   display: block;
   padding: 0 1rem;
 
-&:hover {
-  color: $blue-lagoon;
+  &:hover {
+    color: $blue-lagoon;
+  }
 }
-
-}
-
-
 </style>

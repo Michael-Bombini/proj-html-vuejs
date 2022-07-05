@@ -19,6 +19,7 @@ import EditorialContent from "./EditorialContent.vue";
 import NewsLetter from "./NewsLetter.vue";
 import ContactForm from "./ContactForm.vue";
 export default {
+  name: "TheMain",
   components: {
     FirstCardSection,
     TheCompany,

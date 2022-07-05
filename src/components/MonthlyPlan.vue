@@ -17,10 +17,14 @@
 
     <div class="container">
       <div class="row g-4">
-        <div class="col-sm-12 col-lg-4" v-for="feature in whichFeature" :key="feature.price">
+        <div
+          class="col-sm-12 col-lg-4"
+          v-for="feature in whichFeature"
+          :key="feature.price"
+        >
           <div
             class="price-info position-relative"
-            :class="{ 'popular': feature.isPopular === true }"
+            :class="{ popular: feature.isPopular === true }"
           >
             <div class="text-center py-4">
               <i :class="feature.icon" class="fa-3x"></i>
@@ -190,7 +194,7 @@ section {
       .arrow {
         opacity: 1;
         transition: opacity 1s ease, top 0.5s ease, box-shadow 2s ease;
-        
+
         box-shadow: inset 0 10px 0 30px #1abc9c;
         border-radius: 50%;
         top: 10px;
