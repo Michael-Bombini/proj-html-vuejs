@@ -169,7 +169,7 @@ section {
 
   &:hover {
     .overlay {
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(10px) brightness(60%);
       transition: backdrop-filter 0.5s ease;
     }
 
