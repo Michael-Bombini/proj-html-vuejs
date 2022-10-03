@@ -116,7 +116,7 @@ section {
 
   input {
     background-color: rgba($white, 0.5);
-    width: 450px;
+    max-width: 450px;
     margin-bottom: $small-spacer + 0.5rem;
     border-radius: 4px;
     &active {

@@ -61,7 +61,7 @@ export default {
     padding-bottom: 150px;
 
     h1 {
-      font-size: $text-title;
+      font-size: clamp(3rem,7vw,5rem);
       font-weight: 900;
       margin-bottom: $medium-spacer;
     }
